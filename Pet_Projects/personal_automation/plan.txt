@@ -1,0 +1,79 @@
+Upon Waking (7:00am): Open blinds, turn on lights, turn off fan, sound alarm
+    Equipment: Arduino/Rasberry Pi, motors, switches, general cables/tools, also blackout curtains
+    Tech Stack: Arduino/Rasberry Pi, python (libraries: datetime, something for activating switches/motors)
+
+Sleep Hygiene Phase (10:00pm): Close blinds, turn off main lights and on red LEDs, lock TV, turn on blue filters for screens, at sleep (11:00pm) turn off red LEDs
+    Same as Upon Waking except for additional phone/computer apps and TV settings
+
+Daily Inputs: Log food/water/nutrition/suppliment/drug info, run/exercise stats, biometrics (weight, maybe measurements, calculate BMI, sleep time/quality, daily steps), daily mood, have time series attached to calandar
+    Make personal database (MySQL or SQLite, integrate with python? Separate IDE? Python/Bash scripting?)
+        Need to sort out data architechture/schema (Lots of data, warehouse it? do I need advanced pipelines if I also work with population data? If this is too end to end, find outside help from communities/other apps)
+    Automated reporting (Tableau? Matplotlib? Web/Mobile App?)
+    If logging driving time/miles, Arduino/Rasberry Pi? API to track google maps automatically? (Can run be auto detected and tracked on phone?)
+    If logging screen time, APIs to gather screen time info from phone/laptop/computer
+    For sleep, scrape from third-party app with API (same with scrapping HeadSpace for meditation data)?
+        Certain sleep quality apps collect additional data that may help reduce load from other apps/APIs I'd otherwise have to make.
+    Financial info? (more in Financial planner/reminder program)
+    Track more uh, toilet/personal things... (NEED encrypting)
+    Time spent practicing specific skills including milestones/achievements? (Not sure about this one)
+    Have all of this asked automatically at set timepoints if not auto-logged.
+
+    Comparisons for reporting?
+        Scrape population data where applicable to compare?
+        How to make recommendations based on personal trends?
+            APIs to deployed machine learning models?
+            Develop machine learning models for personal use? Where to pull reliable data from? Maybe need to learn recommender systems.
+            What kinds of recommendations should I try to make?
+
+    Additional devices to automate data collection: Fitbit (general biometrics), sleep EEG headset? select phone apps, maybe Arduinos/Rasberry pipelines
+    Potential Tech Stack: General python (maybe some ML libraries and scripting), general DBs (SQL), LOTS of APIs, general developer tools (bash scripting included), some reporting tools
+
+Email Scrapping? scrape major emails for senders that I actually care about (maybe not that important)
+
+Password Manager/Generator: Need to learn about encrypting. Generating, applying and saving new passwords would be useful, also need web APIs
+    Traditional password managers have too much fluff, make one more personalized or find one that works for you
+
+Personalized Schedule/Calandar/Planner: Integrate already existing calandars into one, include resolution for personal planner, include routine chores, include birthday/holiday reminders, have conflict management
+    See if any calandar apps do this already.
+
+Financial planner/reminder: Compile financial info into one place. Auto-logins with Password manager?
+    Display accounts, current funds, credit scores, recent transactions, recent changes in assests, set alerts. See connected accounts and recurring payments. Access individual apps from this app
+    Tech Stack: Save to database (more in Daily Inputs)? (Some SQL or MongoDB, encrypting and security), Python (Maybe fullstack libraries to avoid Javascript), HTML, Maybe CSS, APIs to connect bank apps and other interacting software
+
+Tying it all together
+    Work your way up to fullstack but keep it simple
+    Stick to python as much as you can, use libraries to compensate (avoid reporting tools, don't use Tableau if you don't have to)
+    Stick to one SQL format (Pick MySQL/SQLite/PostgreSQL) for databasing, don't use other DBs if you don't have to, make sure its python compatable
+    Don't go overboard with Dev tools
+
+    Start with investigating already existing apps that can cover some of my goals and are integratable (open source is a plus)
+    Start early with hardware projects/aquisition
+        Set-up wake/sleep systems
+        Get fitbit/smart watch, look into other Equipment
+    Two points to center everything around: calandar/planners (front end) data input (backend)
+    Start with data engineering, can still view and make insight about lots just looking at how to move the data
+        Use open source tools to make life easier, don't go through a cluster fuck of tools that have to interact with eachother
+        Begin with data aquisition, once all systems are in place start designing the database (this bleeds into backend)
+        Handling data volume, set up home lab or cloud/cluster computing?
+            Cloud data handling may be more simple to use and can automatically handle security
+        Data may come preprocessed from certain apps and APIs, keep this in mind
+        Make sure data can be monitored with key metrics being observable
+    Once data engineering is complete, some basic data science can be done
+        Try pulling data and scripting simple stats from them
+        Try applying pre-made ML models to the data, see if behavioral recommendations work
+        Also try causal models, might be more applicable to some data/recommendations over others
+        Avoid making your own models if possible, you can play around with that after everything else is done
+    Once you can prove some insights with data science, move onto backend engineering
+        Reintegrate outputs from data science section back into DBs
+        Clearly organize backend schemas in a simple way, don't waste too much time if others have this figured out
+        No authentification needed if I'm the only one using this
+    After backend, tie it together with the front end
+        This is where most of the calandar/planner stuff comes into play
+        Need to work out interface organization, refine it and keep it simple
+        Look into UI/UX design principles, should have a dashboard fell
+        Figure out how much of this can be implimented on Windows, Linux, and Android
+
+
+
+**Maybe use ChatGPT to gather ideas/outline code
+**Always look for apps that already exist that can replace parts of this or can be reasonably integrated
